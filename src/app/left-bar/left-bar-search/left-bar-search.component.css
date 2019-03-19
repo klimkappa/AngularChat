@@ -1,0 +1,45 @@
+:host {
+    display: block;
+}
+
+.search__label {
+    background-color: rgb(150, 150, 150);
+    padding: 10px 10px 10px 10px;
+    border: 1px solid rgb(85, 85, 85);
+}
+
+.input__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0px;
+    background-color: rgb(204, 201, 201);
+    height: 30px;
+    width: 320px;
+    margin-left: 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.person__add {
+    cursor: pointer;
+    border-radius: 50% 50% 50% 50%;
+    padding: 7px 0px 7px 10px;
+    width: 30px;
+    height: 20px;
+}
+
+input {
+    font-size: 1.0em;
+    outline: none;
+    border: 0;
+    font-family: inherit;
+    -webkit-appearance: none;
+    background-color: rgb(204, 201, 201);
+    border-radius: 10px 10px 10px;
+    cursor: text;
+}
+
+.mytext {
+    width: 70%;
+    padding-right: 10px;
+}

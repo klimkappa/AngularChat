@@ -1,0 +1,38 @@
+:host {
+    display: block;
+}
+
+.chat__display {
+    height: 597px;
+    background-color: rgb(194, 194, 194);
+    max-width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 1px solid rgb(85, 85, 85);
+}
+
+p {
+    border: 1px inset;
+    max-width: 30%;
+    margin-left: 10px;
+    background-color: rgb(228, 226, 225);
+    border-radius: 10px 10px 10px 10px;
+    height: 22px;
+    text-align: center;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

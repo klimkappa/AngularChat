@@ -1,0 +1,59 @@
+:host {
+    display: block;
+}
+
+.contacts {
+    height: 270px;
+    max-width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 1px solid rgb(85, 85, 85);
+}
+
+
+mat-card {
+    cursor: pointer;
+    border-radius: 0px 0px 0px 0px;
+    padding: 21px 0px 0px 0px;
+    padding-left: 10px;
+    border: 4px double rgb(85, 85, 85);
+    background-color: rgb(224, 224, 224);
+}
+mat-card:hover{
+    background-color: rgb(180, 180, 180);
+
+}
+mat-card.selected{
+    background-color: rgb(145, 145, 145);
+
+}
+
+.example-header-image {
+    background-image: url('https://i.etsystatic.com/13040963/r/il/3e78e7/1084458132/il_570xN.1084458132_fpgr.jpg');
+    background-size: cover;
+}
+
+h4 {
+    background-color: rgb(150, 150, 150);
+    margin: 0 0 0 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    border: 1px solid rgb(85, 85, 85);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

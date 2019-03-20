@@ -18,7 +18,12 @@ export class SendMessageComponent implements OnInit {
 
   ngOnInit() {
 
+    }
+
     
+    sendMessage(message){
+      this.messageService.message.next(message);
+      console.log('something')
   }
 
 }

@@ -8,7 +8,7 @@ import { of, Observable, Subject } from 'rxjs';
 })
 export class MessageService extends BasicEntityService<Message> {
 
-  public message = new Subject();
+  public message = new Subject<string>();
 
 
   messsagesStack: {[roomId: number] : Message[]};

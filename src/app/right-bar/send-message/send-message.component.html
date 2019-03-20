@@ -1,8 +1,8 @@
 
   <div class="input__form">
-    <input placeholder="Start chatting..." name="text" class="mytext" id='input'>
+    <input #input placeholder="Start chatting..." name="text" class="mytext" id='input' >
     <div class="send__message">
-      <mat-icon onclick="document.getElementById('input').value = ''">send</mat-icon>
+      <mat-icon (click)="sendMessage(input.value); input.value = ''">send</mat-icon>
     </div>
   </div>
 

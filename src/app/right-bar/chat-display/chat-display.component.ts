@@ -16,6 +16,7 @@ export class ChatDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.messageService.find().subscribe(msgs => this.messages = msgs);
+    this.messageService.message.subscribe(message => this.messages.push(new Message(message)));
     
   }
 

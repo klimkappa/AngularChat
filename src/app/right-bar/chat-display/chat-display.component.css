@@ -3,6 +3,11 @@
 }
 
 .chat__display {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    align-content: center;
     height: 597px;
     background-color: rgb(194, 194, 194);
     max-width: 100%;
@@ -12,13 +17,16 @@
 }
 
 p {
+    max-width: 50%;
     border: 1px inset;
-    max-width: 30%;
-    margin-left: 10px;
+    padding: 3px 3px 3px 3px;
+    margin: 5px 12px 0 12px;
     background-color: rgb(228, 226, 225);
     border-radius: 10px 10px 10px 10px;
-    height: 22px;
+    max-height: 40%;
     text-align: center;
+    
+
 }
 
 ::-webkit-scrollbar {

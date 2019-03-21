@@ -23,7 +23,6 @@ export class SendMessageComponent implements OnInit {
     
     sendMessage(message){
       this.messageService.message.next(message);
-      console.log('something')
   }
 
 }

@@ -3,6 +3,6 @@ export class Contact extends BasicEntity {
     
     full_name: string;
     last_chat: string;
-    profile_photo: [];
+    profile_photo:string;
 
 }

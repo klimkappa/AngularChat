@@ -4,9 +4,9 @@
   <mat-card *ngFor="let contact of contacts" [class.selected]="contact === selectedContact"
   (click)="onSelect(contact)">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
+      <div mat-card-avatar class="example-header-image" [ngStyle]="{ 'background-image': 'url(' + contact.profile_photo + ')'}"></div>
       <mat-card-title>{{contact.full_name}} </mat-card-title>
-      <mat-card-subtitle>{{contact.last_chat}}</mat-card-subtitle>
+      <mat-card-subtitle>{{contact.last_chat}} </mat-card-subtitle>
     </mat-card-header>
   </mat-card>
 

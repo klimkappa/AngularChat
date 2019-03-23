@@ -11,7 +11,7 @@ export class MessageService extends BasicEntityService<Message> {
   public message = new Subject<string>();
 
 
-  messsagesStack: {[roomId: number] : Message[]};
+  messsagesStack: { [roomId: number]: Message[] };
   constructor() {
     super();
   }
@@ -27,11 +27,11 @@ export class MessageService extends BasicEntityService<Message> {
   }
 
   find(): Observable<Message[]> {
-    return of([{body: 'test'}, {body: 'test1'}, {body: 'test2'}] as any[]);
+    return of([{ body: 'test' }, { body: 'test1' }, { body: 'test2' }] as any[]);
   }
 
-  findByRoomId(id: number): Observable<Message[]>{
+  findByRoomId(id: number): Observable<Message[]> {
     return null;
   }
-  
+
 }

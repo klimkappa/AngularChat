@@ -1,53 +1,16 @@
 <h4>Chats</h4>
 <div class="chats">
-
-  <mat-card>
+  <mat-card *ngFor="let contact of contacts" [class.selected]="contact === selectedContact" (click)="onSelect(contact)"
+    routerLink="/room/{{contact.id}}">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Chat Example</mat-card-subtitle>
+      <div mat-card-avatar class="example-header-image"
+        [ngStyle]="{ 'background-image': 'url(' + contact.profile_photo + ')'}"></div>
+      <mat-card-title>{{contact.full_name}} </mat-card-title>
+      <mat-card-subtitle>{{contact.last_chat}} </mat-card-subtitle>
     </mat-card-header>
   </mat-card>
 
-
-  <mat-card>
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Chat Example</mat-card-subtitle>
-    </mat-card-header>
-  </mat-card>
-
-
-  <mat-card>
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Chat Example</mat-card-subtitle>
-    </mat-card-header>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Chat Example</mat-card-subtitle>
-    </mat-card-header>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Chat Example</mat-card-subtitle>
-    </mat-card-header>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Chat Example</mat-card-subtitle>
-    </mat-card-header>
-  </mat-card>
+  <div *ngIf="selectedContact">
+    <h2>{{selectedContact.full_name}} Selected</h2>
+  </div>
 </div>

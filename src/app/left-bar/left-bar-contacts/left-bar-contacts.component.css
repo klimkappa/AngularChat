@@ -16,8 +16,12 @@ mat-card {
     border-radius: 0px 0px 0px 0px;
     padding: 21px 0px 0px 0px;
     padding-left: 10px;
+    padding-bottom: 17px;
     border: 4px double rgb(85, 85, 85);
     background-color: rgb(224, 224, 224);
+}
+mat-card-title{
+    padding-top: 8px;
 }
 mat-card:hover{
     background-color: rgb(180, 180, 180);

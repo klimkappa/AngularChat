@@ -5,7 +5,7 @@ import { LeftBarContactsComponent } from './left-bar/left-bar-contacts/left-bar-
 import { LeftBarChatsComponent } from './left-bar/left-bar-chats/left-bar-chats.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'Contacts', pathMatch: 'full' },
+
   { path: 'Contacts', component: LeftBarContactsComponent },
   { path: 'Chats', component: LeftBarChatsComponent },
   { path: 'room/:id', component: ChatDisplayComponent }];

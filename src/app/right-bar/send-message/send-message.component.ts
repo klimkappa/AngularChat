@@ -13,16 +13,14 @@ export class SendMessageComponent implements OnInit {
 
   constructor(private messageService: MessageService) { }
 
-  
-
 
   ngOnInit() {
 
-    }
+  }
 
-    
-    sendMessage(message){
-      this.messageService.message.next(message);
+
+  sendMessage(message) {
+    this.messageService.message.next(message);
   }
 
 }

@@ -4,13 +4,12 @@
 
 .chats {
     height: 270px;
-    background-color: rgb(187, 144, 159);
+    background-color: rgb(255, 255, 255);
     max-width: 100%;
     overflow: scroll;
     overflow-x: hidden;
     border: 1px solid rgb(85, 85, 85);
 }
-
 mat-card {
     cursor: pointer;
     border-radius: 0px 0px 0px 0px;
@@ -19,9 +18,16 @@ mat-card {
     border: 4px double rgb(85, 85, 85);
     background-color: rgb(224, 224, 224);
 }
+mat-card:hover{
+    background-color: rgb(180, 180, 180);
+
+}
+mat-card.selected{
+    background-color: rgb(160, 159, 159);
+
+}
 
 .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
 }
 

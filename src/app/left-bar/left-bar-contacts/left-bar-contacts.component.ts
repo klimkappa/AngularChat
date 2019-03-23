@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CONTACTS } from 'src/app/models/chat/entity/mock-contacts';
 import { Contact } from 'src/app/models/chat/entity/contact';
-
+import { ActivatedRoute, Params } from '@angular/router';
+import { RoomService } from 'src/app/service/room/room.service'
+import { Room } from 'src/app/models/chat/entity/room'
 
 
 @Component({
@@ -13,16 +15,26 @@ export class LeftBarContactsComponent implements OnInit {
 
   selectedContact: Contact;
 
-  public contacts: Contact[] = CONTACTS;
 
-  
+  public contacts: Contact[] = CONTACTS;
+  activeRouteParam$: any;
+
+  roomService: RoomService;
+
+
   public onSelect(contact: Contact): void {
-  this.selectedContact = contact;
+    this.selectedContact = contact;
   }
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.activeRouteParam$ = this.activatedRoute.params.subscribe((params: Params) => {
+      this.selectedContact.id = params['id']
+    })
+  }
 
   ngOnInit() {
   }
+  selectContact(selectedContact) {
 
+  }
 
 }

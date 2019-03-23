@@ -8,10 +8,10 @@ const routes: Routes = [
 
   { path: 'Contacts', component: LeftBarContactsComponent },
   { path: 'Chats', component: LeftBarChatsComponent },
-  { path: 'room/:id', component: ChatDisplayComponent }];
+  { path: 'room/:id', component: ChatDisplayComponent },];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash : true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

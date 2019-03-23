@@ -26,7 +26,8 @@ export class LeftBarContactsComponent implements OnInit {
     this.selectedContact = contact;
   }
   constructor(private activatedRoute: ActivatedRoute) {
-    this.activeRouteParam$ = this.activatedRoute.params.subscribe((params: Params) => {
+    this.activeRouteParam$ = this.activatedRoute.paramMap.subscribe((params: Params) => {
+      debugger
       this.selectedContact.id = params['id']
     })
   }

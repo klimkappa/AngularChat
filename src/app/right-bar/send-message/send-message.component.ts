@@ -10,6 +10,7 @@ import { Message } from 'src/app/models/chat/entity/message';
 export class SendMessageComponent implements OnInit {
 
   body: string;
+  now = new Date();
 
   constructor(private messageService: MessageService) { }
 
@@ -21,6 +22,7 @@ export class SendMessageComponent implements OnInit {
 
   sendMessage(message) {
     this.messageService.message.next(message);
+    console.log(this.now);
   }
 
 }

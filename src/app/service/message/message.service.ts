@@ -2,6 +2,13 @@ import { Injectable } from '@angular/core';
 import { BasicEntityService } from '../chat/basic-entity-service';
 import { Message } from 'src/app/models/chat/entity/message';
 import { of, Observable, Subject } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+
+
+const ROOM_MESG_MAP: { [id: number]: Message[] } = {
+  1: { id: 1, nickname: 'User1' } as any,
+  2: { id: 2, nickname: 'User2' } as any
+};
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +16,29 @@ import { of, Observable, Subject } from 'rxjs';
 export class MessageService extends BasicEntityService<Message> {
 
   public message = new Subject<string>();
+  now = new Date();
+  options = { era: 'short',
+  year: '2-digit',
+  month: '2-digit',
+  day: '2-digit',
+  weekday: 'short',
+  timezone: 'UTC',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit'
+}
+ 
 
 
   messsagesStack: { [roomId: number]: Message[] };
-  constructor() {
+  constructor(activatedRoute: ActivatedRoute) {
     super();
+    activatedRoute.queryParams.subscribe((p) => {
+      debugger;
+    });
+    activatedRoute.params.subscribe((p) => {
+      debugger;
+    });
   }
 
   getById(id: number): Observable<Message> {
@@ -27,11 +52,12 @@ export class MessageService extends BasicEntityService<Message> {
   }
 
   find(): Observable<Message[]> {
-    return of([{ body: 'test' }, { body: 'test1' }, { body: 'test2' }] as any[]);
+    return of([{ body: 'test', now: this.now.toLocaleString("ru", this.options) }, { body: 'test1' }, { body: 'test2' }] as any[]);
   }
 
   findByRoomId(id: number): Observable<Message[]> {
-    return null;
+    //return of(ROOM_MESG_MAP[id]);
+    return of([]);
   }
 
 }

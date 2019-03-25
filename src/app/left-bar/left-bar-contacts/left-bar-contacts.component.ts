@@ -13,7 +13,7 @@ import { Room } from 'src/app/models/chat/entity/room'
 })
 export class LeftBarContactsComponent implements OnInit {
 
-  selectedContact: Contact;
+  selectedContact: Contact = new Contact();
 
 
   public contacts: Contact[] = CONTACTS;

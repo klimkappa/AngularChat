@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Contact } from 'src/app/models/chat/entity/contact';
 import { CONTACTS } from 'src/app/models/chat/entity/mock-contacts';
 import { RoomService } from 'src/app/service/room/room.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-left-bar-chats',
@@ -10,7 +11,7 @@ import { RoomService } from 'src/app/service/room/room.service';
 })
 export class LeftBarChatsComponent implements OnInit {
 
-  selectedContact: Contact;
+  selectedContact: Contact = new Contact();
 
 
   public contacts: Contact[] = CONTACTS;
@@ -22,7 +23,13 @@ export class LeftBarChatsComponent implements OnInit {
   public onSelect(contact: Contact): void {
     this.selectedContact = contact;
   }
-  constructor() {
+  constructor(activatedRoute: ActivatedRoute) {
+    activatedRoute.queryParams.subscribe((p) => {
+      debugger;
+    });
+    activatedRoute.params.subscribe((p) => {
+      debugger;
+    });
   }
 
   ngOnInit() {

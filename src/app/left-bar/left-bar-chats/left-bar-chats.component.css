@@ -22,10 +22,6 @@ mat-card:hover{
     background-color: rgb(180, 180, 180);
 
 }
-mat-card.selected{
-    background-color: rgb(160, 159, 159);
-
-}
 
 .example-header-image {
     background-size: cover;

@@ -6,6 +6,4 @@ export class Room extends BasicEntity {
     attachments?: Object[];
     create_at?: Date;
     update_at?: Date;
-
-
 }

@@ -9,6 +9,10 @@ export class Message extends BasicEntity {
     create_at?: Date;
     update_at?: Date;
 
+     now ?: Date;
+     options? = {};
+      
+
     constructor(body: string) {
         super();
         this.body = body;

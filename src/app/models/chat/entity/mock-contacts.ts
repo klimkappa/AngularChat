@@ -1,25 +1,35 @@
-import { Contact } from '/Users/MSI/AngularChat/src/app/models/chat/entity/contact'
+import { Contact } from './contact';
 
 export const CONTACTS: Contact[] = [
   {
     full_name: 'Contact1',
     id: 1,
     last_chat: 'Message1 Message1 Message1',
-    profile_photo: 'https://material.angular.io/assets/img/examples/shiba1.jpg'
+    profile_photo: 'https://d3ctd91c7nw0ql.cloudfront.net/damfiles/box_list_img/emea/press/2019/mark-humrichouser-vice-president-global-sales/teaser_image_humrichouser_1140x820.jpg-d5efda62a89ecdae32407e4f91a21534.jpg'
   }, {
     full_name: 'Contact2',
     id: 2,
     last_chat: 'Message2 Message2 Message2',
-    profile_photo: 'https://rukminim1.flixcart.com/image/832/832/jggv53k0/mobile-holder/a/v/d/pop-socket-dog-face-design-vu4-original-imaf4p7gxzbggdx3.jpeg?q=70'
+    profile_photo: 'https://amp.businessinsider.com/images/5a8d77a5391d941d008b461a-750-563.jpg'
   }, {
     full_name: 'Contact3',
     id: 3,
     last_chat: 'Message3 Message3 Message3',
-    profile_photo: 'https://static1.squarespace.com/static/56f5fdc7c2ea5119892e22c2/571a3e70b654f9dd5cc18184/571a3ff22fe131cc95a5ed80/1461338106253/Beagle-Frankie-013-apf-.jpg?format=1000w'
+    profile_photo: 'https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2018/09/340/340/headshot.jpg?ve=1&tl=1'
   }, {
     full_name: 'Contact4',
     id: 4,
-    last_chat: 'Message4 Message4 Message4 Message4',
-    profile_photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOxuSycYKzTt0ypnkl7aU_OjiBwB6rqOOdCDXyDqtN5MNhFXLQ'
-  },
+    last_chat: 'Message4 Message4 Message4',
+    profile_photo: 'http://www.emiss.cz/wp-content/uploads/2015/04/845249-bigthumbnail.jpg'
+  }, {
+    full_name: 'Contact5',
+    id: 5,
+    last_chat: 'Message5 Message5 Message5',
+    profile_photo: 'http://navarroclinica.com/wp-content/uploads/2017/12/teresa-foto.jpg'
+  }, {
+    full_name: 'Contact6',
+    id: 6,
+    last_chat: 'Message6 Message6 Message6',
+    profile_photo: 'https://www.thederminstitute.com/wp-content/uploads/2016/09/smiling-happy-confident-man.jpg'
+  }
 ];

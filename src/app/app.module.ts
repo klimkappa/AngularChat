@@ -1,43 +1,45 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {  MatAutocompleteModule,
-          MatBadgeModule,
-          MatBottomSheetModule,
-          MatButtonModule,
-          MatButtonToggleModule,
-          MatCardModule,
-          MatCheckboxModule,
-          MatChipsModule,
-          MatDatepickerModule,
-          MatDialogModule,
-          MatDividerModule,
-          MatExpansionModule,
-          MatGridListModule,
-          MatIconModule,
-          MatInputModule,
-          MatListModule,
-          MatMenuModule,
-          MatNativeDateModule,
-          MatPaginatorModule,
-          MatProgressBarModule,
-          MatProgressSpinnerModule,
-          MatRadioModule,
-          MatRippleModule,
-          MatSelectModule,
-          MatSidenavModule,
-          MatSliderModule,
-          MatSlideToggleModule,
-          MatSnackBarModule,
-          MatSortModule,
-          MatStepperModule,
-          MatTableModule,
-          MatTabsModule,
-          MatToolbarModule,
-          MatTooltipModule,
-          MatTreeModule,} from '@angular/material';
-          
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule,
+} from '@angular/material';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LeftBarChatsComponent } from './left-bar/left-bar-chats/left-bar-chats.component';
@@ -47,6 +49,7 @@ import { UserInfoComponent } from './left-bar/user-info/user-info.component';
 import { ChatDisplayComponent } from './right-bar/chat-display/chat-display.component';
 import { ChatInfoComponent } from './right-bar/chat-info/chat-info.component';
 import { SendMessageComponent } from './right-bar/send-message/send-message.component';
+import { RightMainComponent } from './right-bar/right-main/right-main.component';
 
 @NgModule({
   declarations: [
@@ -57,13 +60,14 @@ import { SendMessageComponent } from './right-bar/send-message/send-message.comp
     UserInfoComponent,
     ChatDisplayComponent,
     ChatInfoComponent,
-    SendMessageComponent
+    SendMessageComponent,
+    RightMainComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    BrowserAnimationsModule,    
+    BrowserAnimationsModule,
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,
@@ -98,7 +102,7 @@ import { SendMessageComponent } from './right-bar/send-message/send-message.comp
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule 
+    MatTreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

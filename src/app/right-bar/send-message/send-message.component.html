@@ -1,10 +1,9 @@
-
-  <div class="input__form">
-    <input #input placeholder="Start chatting..." name="text" class="mytext" id='input' maxlength="200">
-    <div class="send__message">
-      <mat-icon (click)="sendMessage(input.value); input.value = ''">send</mat-icon>
-    </div>
+<div class="input__form">
+  <input #input placeholder="Start chatting..." name="text" class="mytext" id='input' maxlength="200">
+  <div class="send__message">
+    <mat-icon (click)="sendMessage(input.value,now); input.value = ''">send</mat-icon>
   </div>
+</div>
 
 
 <!--

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MessageService } from 'src/app/service/message/message.service';
 import { Message } from 'src/app/models/chat/entity/message';
 
@@ -11,6 +11,7 @@ export class SendMessageComponent implements OnInit {
 
   body: string;
   now = new Date();
+  
 
   constructor(private messageService: MessageService) { }
 
@@ -21,8 +22,19 @@ export class SendMessageComponent implements OnInit {
 
 
   sendMessage(message) {
+    if(message || null || false || 0){
     this.messageService.message.next(message);
-    console.log(this.now);
+  }
+    else {
+      alert( 'Невозможно отправить пустое сообщение' );
+      
+    }
+  }
+
+  @Input() roomId : number;  
+  
+  RoomDetector(){
+    alert(this.roomId);
   }
 
 }

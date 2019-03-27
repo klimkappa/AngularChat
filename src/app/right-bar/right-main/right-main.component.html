@@ -1,11 +1,11 @@
 <div class="chat__info">
-  <app-chat-info></app-chat-info>
+  <app-chat-info [roomId] ="roomId" ></app-chat-info>
 </div>
 <div class="chat__display">
-  <router-outlet></router-outlet>
-  <!--<app-chat-display></app-chat-display>-->
+  
+  <app-chat-display [roomId] ="roomId" ></app-chat-display>
 </div>
 <div class="send__message">
-  <app-send-message></app-send-message>
+  <app-send-message [roomId] ="roomId"></app-send-message>
 
 </div>

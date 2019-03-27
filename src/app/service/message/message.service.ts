@@ -16,7 +16,10 @@ const ROOM_MESG_MAP: { [id: number]: Message[] } = {
 export class MessageService extends BasicEntityService<Message> {
 
   public message = new Subject<string>();
+  public sent_date = new Subject<Date>();
+
   now = new Date();
+
   options = { era: 'short',
   year: '2-digit',
   month: '2-digit',
@@ -52,7 +55,11 @@ export class MessageService extends BasicEntityService<Message> {
   }
 
   find(): Observable<Message[]> {
-    return of([{ body: 'test', now: this.now.toLocaleString("ru", this.options) }, { body: 'test1' }, { body: 'test2' }] as any[]);
+    return of([
+      { body: 'test', now: this.now.toLocaleString("ru", this.options) },
+      { body: 'test1' },
+      { body: 'test2' }
+    ] as any[]);
   }
 
   findByRoomId(id: number): Observable<Message[]> {

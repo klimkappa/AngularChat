@@ -1,7 +1,7 @@
 import { BasicEntity } from './basic-entity';
 
 export class Message extends BasicEntity {
-    body: string;
+    body?: string;
     author_id?: number;
 
     attachments?: Object[];
@@ -10,7 +10,7 @@ export class Message extends BasicEntity {
     update_at?: Date;
 
      now ?: Date;
-     options? = {};
+     options?: any;
       
 
     constructor(body: string) {

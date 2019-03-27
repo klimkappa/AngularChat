@@ -4,12 +4,13 @@ import { ChatDisplayComponent } from './right-bar/chat-display/chat-display.comp
 import { LeftBarContactsComponent } from './left-bar/left-bar-contacts/left-bar-contacts.component';
 import { LeftBarChatsComponent } from './left-bar/left-bar-chats/left-bar-chats.component';
 import { LeftBarSearchComponent } from './left-bar/left-bar-search/left-bar-search.component';
+import { RightMainComponent } from './right-bar/right-main/right-main.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'room/1', pathMatch: 'full' },
   { path: 'Contacts', component: LeftBarContactsComponent },
   { path: 'Chats', component: LeftBarChatsComponent },
-  { path: 'room/:roomId', component: ChatDisplayComponent },];
+  { path: 'room/:roomId', component: RightMainComponent },];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,{useHash : true, enableTracing: true})],

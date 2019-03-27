@@ -11,15 +11,17 @@ import { User } from 'src/app/models/chat/entity/user';
   styleUrls: ['./chat-info.component.css']
 })
 export class ChatInfoComponent implements OnInit {
-   @Input () room: Room;
-   @Input () user: User;
-  
-  
+
+  @Input() roomId : number ;
 
   constructor() {
   }
 
   ngOnInit() {
+  }
+
+  RoomDetector(){
+    alert(this.roomId);
   }
 
 }

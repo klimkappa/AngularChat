@@ -4,7 +4,8 @@ import { Contact } from 'src/app/models/chat/entity/contact';
 import { ActivatedRoute, Params, Router, NavigationEnd } from '@angular/router';
 import { RoomService } from 'src/app/service/room/room.service'
 import { Room } from 'src/app/models/chat/entity/room'
-import { filter} from 'rxjs/operators'
+import { filter } from 'rxjs/operators'
+import { ContactService } from 'src/app/service/contact/contact.service';
 
 
 @Component({
@@ -14,31 +15,36 @@ import { filter} from 'rxjs/operators'
 })
 export class LeftBarContactsComponent implements OnInit {
 
-  selectedContact: Contact = new Contact();
-
   public contacts: Contact[] = CONTACTS;
 
-  //result = CONTACTS.filter(elem => elem[this.roomId])
-
-
-  activeRouteParam$: any;
-
-  roomService: RoomService;
-  public onSelect(contact: Contact): void {
-    this.selectedContact = contact;
-  }
-
-  constructor(private router: Router) {
+  constructor(private router: Router, private contactService: ContactService) {
     this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe((r: NavigationEnd) => {
       console.log(router.routerState.root.firstChild.paramMap['roomId']);
     });
   }
 
   ngOnInit() {
+    this.getContacts();
   }
-  selectContact(selectedContact) {
 
+  getContacts(): void {
+    this.contactService.getContacts()
+      .subscribe(contacts => this.contacts = contacts);
   }
-  
+
+  add(full_name: string): void {
+    full_name = full_name.trim();
+    if (!full_name) { return; }
+    this.contactService.addContact({ full_name } as Contact)
+      .subscribe(contact => {
+        this.contacts.push(contact);
+      });
+  }
+
+  delete(contact: Contact): void {
+    this.contacts = this.contacts.filter(c => c !== contact);
+    this.contactService.deleteContact(contact).subscribe();
+  }
+
 
 }

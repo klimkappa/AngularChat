@@ -31,5 +31,5 @@ export const CONTACTS: Contact[] = [
     id: 6,
     last_chat: 'Message6 Message6 Message6',
     profile_photo: 'https://www.thederminstitute.com/wp-content/uploads/2016/09/smiling-happy-confident-man.jpg'
-  },
+  }
 ];

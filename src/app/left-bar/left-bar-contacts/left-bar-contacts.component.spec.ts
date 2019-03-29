@@ -8,9 +8,9 @@ describe('LeftBarContactsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LeftBarContactsComponent ]
+      declarations: [LeftBarContactsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

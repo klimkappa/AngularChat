@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of, Observable, Subject } from 'rxjs';
+
 import { BasicEntityService } from '../chat/basic-entity-service';
 import { User } from 'src/app/models/chat/entity/user';
 
@@ -7,7 +8,6 @@ const USER_MAP: { [id: number]: User } = {
   1: { id: 1, nickname: 'User1' },
   2: { id: 2, nickname: 'User2' }
 };
-
 
 @Injectable({
   providedIn: 'root'

@@ -1,17 +1,22 @@
 <h4>Contacts</h4>
-<div class="contacts">
 
-  <mat-card *ngFor="let contact of contacts" [class.selected]="contact === selectedContact" (click)="onSelect(contact)"
-    routerLink="/room/{{contact.id}}">
+<div class="show_contacts">
+
+  <mat-card *ngFor="let contact of contacts" routerLink="/room/{{contact.id}}">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"
         [ngStyle]="{ 'background-image': 'url(' + contact.profile_photo + ')'}"></div>
-      <mat-card-title>{{contact.full_name}} </mat-card-title>
+      <mat-card-title>{{contact.full_name}} </mat-card-title> <button mat-icon-button class="delete" title="delete contact"
+      (click)="delete(contact)"> <mat-icon>clear</mat-icon>
+      </button>
     </mat-card-header>
   </mat-card>
 
-
-  <div *ngIf="selectedContact">
-    <h2>{{selectedContact.id}} Selected</h2>
+  <div>
+    <label>Contact Name:
+      <input #contactName />
+    </label>
+    <button (click)="add(contactName.value); contactName.value=''">
+      add
+    </button>
   </div>
-</div>

@@ -1,6 +1,16 @@
 <div class="search__label">
   <div class="input__form">
-    <input placeholder="Search someone..." class='mytext'>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="Search someone..." class='mytext'>
+    <ul class="search-result">
+      <li *ngFor="let contact of contacts$  | async">
+        <a routerLink="/room/{{contact.id}}">
+          {{contact.full_name}}
+        </a>
+      </li>
+    </ul>
+
+
+
     <div class="person__add">
       <mat-icon matSuffix>person_add</mat-icon>
     </div>

@@ -8,9 +8,9 @@ describe('LeftBarSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LeftBarSearchComponent ]
+      declarations: [LeftBarSearchComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from 'src/app/service/contact/contact.service';
+import { Observable, Subject } from 'rxjs';
+import { Contact } from 'src/app/models/chat/entity/contact';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-left-bar-search',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftBarSearchComponent implements OnInit {
 
-  constructor() { }
+  contacts$: Observable<Contact[]>;
+  private searchTerms = new Subject<string>();
 
-  ngOnInit() {
+  constructor(private contactService: ContactService) { }
+
+  search(term: string): void {
+    this.searchTerms.next(term);
+  }
+
+  ngOnInit(): void {
+
+    this.contacts$ = this.searchTerms.pipe(
+
+      debounceTime(150),
+
+      distinctUntilChanged(),
+
+      switchMap((term: string) => this.contactService.searchContacts(term)),
+    );
   }
 
 }

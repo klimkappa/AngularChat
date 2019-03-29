@@ -39,7 +39,8 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
-
+import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LeftBarChatsComponent } from './left-bar/left-bar-chats/left-bar-chats.component';
@@ -50,6 +51,7 @@ import { ChatDisplayComponent } from './right-bar/chat-display/chat-display.comp
 import { ChatInfoComponent } from './right-bar/chat-info/chat-info.component';
 import { SendMessageComponent } from './right-bar/send-message/send-message.component';
 import { RightMainComponent } from './right-bar/right-main/right-main.component';
+import { InMemoryDataService } from './service/InMemoryData/in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,7 @@ import { RightMainComponent } from './right-bar/right-main/right-main.component'
     ChatInfoComponent,
     SendMessageComponent,
     RightMainComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -102,7 +105,11 @@ import { RightMainComponent } from './right-bar/right-main/right-main.component'
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+    InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

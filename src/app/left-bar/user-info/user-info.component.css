@@ -16,7 +16,21 @@
     cursor: pointer;
 }
 
+img {
+    height: 15%;
+    width: 15%;
+    padding-top: 2px;
+}
+
 .more {
     padding-right: 10px;
     cursor: pointer;
+}
+
+.example-header-image {
+    background-size: cover;
+}
+
+mat-form-field{
+    outline: none;
 }

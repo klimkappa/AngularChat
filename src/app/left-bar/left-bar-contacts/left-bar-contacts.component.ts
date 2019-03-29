@@ -17,11 +17,13 @@ export class LeftBarContactsComponent implements OnInit {
   selectedContact: Contact = new Contact();
 
   public contacts: Contact[] = CONTACTS;
+
+  //result = CONTACTS.filter(elem => elem[this.roomId])
+
+
   activeRouteParam$: any;
 
   roomService: RoomService;
-
-
   public onSelect(contact: Contact): void {
     this.selectedContact = contact;
   }
@@ -37,5 +39,6 @@ export class LeftBarContactsComponent implements OnInit {
   selectContact(selectedContact) {
 
   }
+  
 
 }

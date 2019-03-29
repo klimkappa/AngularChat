@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Contact } from 'src/app/models/chat/entity/contact';
 import { CONTACTS } from 'src/app/models/chat/entity/mock-contacts';
 import { RoomService } from 'src/app/service/room/room.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-left-bar-chats',
@@ -23,12 +24,9 @@ export class LeftBarChatsComponent implements OnInit {
   public onSelect(contact: Contact): void {
     this.selectedContact = contact;
   }
-  constructor(activatedRoute: ActivatedRoute) {
-    activatedRoute.queryParams.subscribe((p) => {
-      debugger;
-    });
-    activatedRoute.params.subscribe((p) => {
-      debugger;
+  constructor(private router: Router) {
+    this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe((r: NavigationEnd) => {
+      console.log(router.routerState.root.firstChild.paramMap['roomId']);
     });
   }
 

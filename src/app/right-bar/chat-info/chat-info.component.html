@@ -1,9 +1,27 @@
-<div class="chat__info" (click)="RoomDetector()" >
-    <div class="face">
-    <mat-icon>face</mat-icon>
+<div class="chat__info">
+  <div *ngIf="contacts[+roomId-1]">
+
+    <div mat-card-avatar class="example-header-image"
+      [ngStyle]="{ 'background-image': 'url(' + contacts[+roomId-1].profile_photo + ')'}">
+    </div>
+
   </div>
-  <p>Chatmate Name</p>
+  <p> {{contacts[+roomId-1].full_name}} </p>
   <div class="more">
-    <mat-icon>more_vert</mat-icon>
+    <mat-icon (click)="RoomDetector()">more_vert</mat-icon>
   </div>
 </div>
+
+
+
+
+
+<!--
+
+<mat-card *ngIf="contacts[+roomId-1]">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"
+        [ngStyle]="{ 'background-image': 'url(' + contacts[+roomId-1].profile_photo + ')'}"></div>
+      <mat-card-title>{{contacts[+roomId-1].full_name}} </mat-card-title>
+    </mat-card-header>
+  </mat-card>-->

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MessageService } from 'src/app/service/message/message.service';
 import { Message } from 'src/app/models/chat/entity/message';
 import { ActivatedRoute } from '@angular/router';
+import { MESSAGES } from 'src/app/models/chat/entity/mock-messages';
 
 
 @Component({
@@ -15,9 +16,9 @@ export class ChatDisplayComponent implements OnInit {
 
   constructor(private messageService: MessageService, 
     private activatedRoute: ActivatedRoute) {
-    //this.activatedRoute.params.subscribe(params => {
-      //let roomId = params['roomId'];
-     // this.messageService.findByRoomId(roomId).subscribe(msgs => this.messages = msgs);})
+    this.activatedRoute.params.subscribe(params => {
+      let roomId = params['roomId'];
+      this.messageService.findByRoomId(roomId).subscribe(msgs => this.messages = msgs);})
   }
 
   ngOnInit() {
@@ -27,6 +28,7 @@ export class ChatDisplayComponent implements OnInit {
   
  
   @Input() roomId : number;  
+  public pessages: Message[] = MESSAGES;
   
   RoomDetector(){
     alert(this.roomId);

@@ -1,22 +1,49 @@
-:host{
+:host {
     display: block;
 }
+
 .chat__info {
+    display: flex;
     height: 45px;
     border: 1px solid rgb(85, 85, 85);
-    display: flex;
+    border-radius: 0 10px 0 0;
+    background-color: rgb(150, 150, 150);
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(150, 150, 150);
-    border-radius: 0px 10px 0px 0px;
 }
 
 .face {
-    cursor: pointer;
     margin-left: 10px;
 }
 
 .more {
-    cursor: pointer;
     margin-right: 10px;
+    cursor: pointer;
+    background-size: cover;
+}
+
+.example-header-image {
+    margin-bottom: 3px;
+    margin-left: 15px;
+    padding: 0 0 0 0;
+    background-size: cover;
+}
+
+p {
+    margin-right: 30px;
+}
+
+mat-card {
+    height: 10px;
+    padding: 0 0 0 0;
+    padding-right: 100px;
+    padding-bottom: 33px;
+    padding-left: 10px;
+    border-radius: 0 0 0 0;
+    background-color: rgb(150, 150, 150);
+}
+
+mat-card-title {
+    padding-top: 8px;
+    padding-left: 20px;
 }

@@ -20,15 +20,13 @@ export class MessageService extends BasicEntityService<Message> {
 
   now = new Date();
 
-  options = { era: 'short',
+  options = { 
+  hour: '2-digit',
+  minute: '2-digit',
   year: '2-digit',
   month: '2-digit',
   day: '2-digit',
-  weekday: 'short',
-  timezone: 'UTC',
-  hour: '2-digit',
-  minute: '2-digit',
-  second: '2-digit'
+  timezone: 'UTC'
 }
  
 
@@ -55,10 +53,10 @@ export class MessageService extends BasicEntityService<Message> {
   }
 
   find(): Observable<Message[]> {
-    return of([
+    return of([/*
       { body: 'test', now: this.now.toLocaleString("ru", this.options) },
       { body: 'test1' },
-      { body: 'test2' }
+      { body: 'test2' }*/
     ] as any[]);
   }
 

@@ -1,9 +1,35 @@
 import { Message } from './message';
-import { setRootDomAdapter } from '@angular/platform-browser/src/dom/dom_adapter';
 
 export const MESSAGES: Message[] = [
   {
+
+    body: 'Message1',
+
     id: 1,
-    body: 'j'
-  },
+    chats: {
+      text: 'text',
+      position: 2,    
+    }
+
+  }, {
+    id: 2,
+    body: 'Message2'
+
+  }, {
+    id: 3,
+    body: 'Message3'
+
+  }, {
+    id: 4,
+    body: 'Message4'
+
+  }, {
+    id: 5,
+    body: 'Message5'
+
+  }, {
+    id: 6,
+    body: 'Message6'
+
+  }
 ];

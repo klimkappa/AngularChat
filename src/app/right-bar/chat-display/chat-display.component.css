@@ -16,8 +16,9 @@
     border: 1px solid rgb(85, 85, 85);
 }
 
-p {
-    max-width: 50%;
+.companion_msgs {
+    align-self: flex-start;
+    max-width: 65%;
     border: 1px inset;
     padding: 3px 3px 3px 3px;
     margin: 5px 12px 0 12px;
@@ -25,8 +26,16 @@ p {
     border-radius: 10px 10px 10px 10px;
     max-height: 40%;
     text-align: center;
-    
-
+}
+.own_msgs {
+    max-width: 65%;
+    border: 1px inset;
+    padding: 3px 3px 3px 3px;
+    margin: 5px 12px 0 12px;
+    background-color: rgb(228, 226, 225);
+    border-radius: 10px 10px 10px 10px;
+    max-height: 40%;
+    text-align: center;
 }
 
 ::-webkit-scrollbar {

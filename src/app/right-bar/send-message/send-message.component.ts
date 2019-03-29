@@ -33,8 +33,6 @@ export class SendMessageComponent implements OnInit {
 
   @Input() roomId : number;  
   
-  RoomDetector(){
-    alert(this.roomId);
-  }
+ 
 
 }

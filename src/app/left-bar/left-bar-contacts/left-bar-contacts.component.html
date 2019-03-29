@@ -1,7 +1,7 @@
 <h4>Contacts</h4>
 <div class="contacts">
 
-  <mat-card *ngFor="let contact of contacts; let i = index" [class.selected]="contact === selectedContact" (click)="onSelect(contact)"
+  <mat-card *ngFor="let contact of contacts" [class.selected]="contact === selectedContact" (click)="onSelect(contact)"
     routerLink="/room/{{contact.id}}">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"
@@ -10,7 +10,8 @@
     </mat-card-header>
   </mat-card>
 
+
   <div *ngIf="selectedContact">
-    <h2>{{selectedContact.full_name}} Selected</h2>
+    <h2>{{selectedContact.id}} Selected</h2>
   </div>
 </div>

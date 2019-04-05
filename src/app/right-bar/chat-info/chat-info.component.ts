@@ -14,19 +14,24 @@ import { CONTACTS } from 'src/app/models/chat/entity/mock-contacts';
 })
 export class ChatInfoComponent implements OnInit {
 
-  @Input() roomId : number;
-  
+  @Input()
+  public room: Room;
 
-  public contacts: Contact[] = CONTACTS;
+  private roomService: RoomService;
 
-  constructor() {
+  constructor(roomService: RoomService) {
+    this.room = new Room();
+    this.roomService = roomService;
   }
 
   ngOnInit() {
+    if(this.room == undefined){
+      this.room = new Room();
+    }
   }
 
-  RoomDetector(){
-    alert( 'room ' + this.roomId  );
+  RoomDetector() {
+
   }
 
 }

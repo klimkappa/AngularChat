@@ -4,12 +4,7 @@ export const MESSAGES: Message[] = [
   {
 
     body: 'Message1',
-
     id: 1,
-    chats: {
-      text: 'text',
-      position: 2,    
-    }
 
   }, {
     id: 2,

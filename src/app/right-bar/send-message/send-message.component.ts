@@ -11,7 +11,6 @@ export class SendMessageComponent implements OnInit {
 
   body: string;
   now = new Date();
-  
 
   constructor(private messageService: MessageService) { }
 
@@ -21,18 +20,19 @@ export class SendMessageComponent implements OnInit {
   }
 
 
-  sendMessage(message) {
-    if(message || null || false || 0){
-    this.messageService.message.next(message);
-  }
+  sendMessage(message: string) {
+    debugger;
+    if (message) {
+      this.messageService.addToRoom(this.roomId, new Message(message));
+    }
     else {
-      alert( 'Невозможно отправить пустое сообщение' );
-      
+      alert('Невозможно отправить пустое сообщение');
+
     }
   }
 
-  @Input() roomId : number;  
-  
- 
+  @Input() roomId: number;
+
+
 
 }

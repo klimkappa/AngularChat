@@ -6,8 +6,8 @@ import { ActivatedRoute } from '@angular/router';
 
 
 const ROOM_MESG_MAP: { [id: number]: Message[] } = {
-  1: { id: 1, nickname: 'User1' } as any,
-  2: { id: 2, nickname: 'User2' } as any
+  1: [new Message('Test 1'), new Message('Test 2')],
+  2: [new Message('Test 3'), new Message('Test 4'), new Message('Test 5')],
 };
 
 @Injectable({
@@ -35,10 +35,10 @@ export class MessageService extends BasicEntityService<Message> {
   constructor(activatedRoute: ActivatedRoute) {
     super();
     activatedRoute.queryParams.subscribe((p) => {
-      debugger;
+      
     });
     activatedRoute.params.subscribe((p) => {
-      debugger;
+      
     });
   }
 
@@ -53,16 +53,15 @@ export class MessageService extends BasicEntityService<Message> {
   }
 
   find(): Observable<Message[]> {
-    return of([/*
-      { body: 'test', now: this.now.toLocaleString("ru", this.options) },
-      { body: 'test1' },
-      { body: 'test2' }*/
-    ] as any[]);
+    return of();
   }
 
   findByRoomId(id: number): Observable<Message[]> {
-    //return of(ROOM_MESG_MAP[id]);
-    return of([]);
+    return of(ROOM_MESG_MAP[id]);
+  }
+  
+  addToRoom(roomId: number, msg: Message){
+    ROOM_MESG_MAP[roomId].push(msg);
   }
 
 }

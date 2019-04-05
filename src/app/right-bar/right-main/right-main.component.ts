@@ -17,23 +17,23 @@ export class RightMainComponent implements OnInit {
   roomId: number;
 
   constructor(private router: ActivatedRoute, private userService: UserService, private roomService: RoomService) {
+    this.room = new Room();
     router.params.subscribe(params => {
-      let roomId = params['roomId'];
       this.roomId = params['roomId'];
-      roomService.getById(roomId).subscribe(r => {
-        this.room = r;
-        userService.getById(this.room.author_id).subscribe((user) => this.user = user);
+      roomService.getById(this.roomId).subscribe(response => {
+        this.room = response;
+        // userService.getById(this.room.author_id).subscribe((user) => this.user = user);
       });
     })
   }
   ngOnInit() {
-   
+
   }
-  
-  
-  RoomDetector(){
+
+
+  RoomDetector() {
     console.log(this.roomId)
     alert(this.roomId)
-    }
-  
+  }
+
 }

@@ -52,6 +52,7 @@ import { ChatInfoComponent } from './right-bar/chat-info/chat-info.component';
 import { SendMessageComponent } from './right-bar/send-message/send-message.component';
 import { RightMainComponent } from './right-bar/right-main/right-main.component';
 import { InMemoryDataService } from './service/InMemoryData/in-memory-data.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { InMemoryDataService } from './service/InMemoryData/in-memory-data.servi
     
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,

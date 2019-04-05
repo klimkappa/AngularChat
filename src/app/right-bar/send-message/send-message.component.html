@@ -1,7 +1,7 @@
 <div class="input__form" >
-  <input #input placeholder="Start chatting..." name="text" class="mytext" id='input' maxlength="400">
+  <input ngModel #input="ngModel" placeholder="Start chatting..." name="text" class="mytext" id='input' maxlength="400">
   <div class="send__message">
-    <mat-icon (click)="sendMessage(input.value); input.value = ''">send</mat-icon>
+    <mat-icon (click)="sendMessage('sdfds'); input.value = ''">send</mat-icon>
   </div>
 </div>
 
@@ -14,3 +14,6 @@
       <mat-icon matSuffix (click)="sendText(text)">send</mat-icon>
     </mat-form-field>
   </div> -->
+
+
+  = = =

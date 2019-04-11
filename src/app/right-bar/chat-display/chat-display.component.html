@@ -1,5 +1,5 @@
 <div class="chat__display">
-    <!--<p *ngIf="pessages[+roomId-1]" class="companion_msgs"  > {{pessages[+roomId-1].body}}</p>-->
-  <p *ngFor="let msg of messages" (click)="RoomDetector()"  class="own_msgs {{msg.body.length > 5 ? 'left' : 'right'}}" >{{msg.body}},{{msg.now}}</p>
-  
+  <!--<p *ngIf="messages[+roomId-1]" class="companion_msgs"  > {{messages[+roomId-1].body}}</p>-->
+<p *ngFor="let msg of messages"   class="msgs {{msg.author_id > 0 ? 'left' : 'right'}}" >{{msg.body}}  {{msg.create_at}}</p>
+
 </div>

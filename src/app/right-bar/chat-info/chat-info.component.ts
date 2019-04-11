@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { Router, Route, ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/service/user/user.service';
 import { RoomService } from 'src/app/service/room/room.service';
@@ -18,6 +20,8 @@ export class ChatInfoComponent implements OnInit {
   public room: Room;
 
   private roomService: RoomService;
+  
+
 
   constructor(roomService: RoomService) {
     this.room = new Room();
@@ -29,6 +33,7 @@ export class ChatInfoComponent implements OnInit {
       this.room = new Room();
     }
   }
+
 
   RoomDetector() {
 

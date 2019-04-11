@@ -1,18 +1,37 @@
 <div class="search__label">
-  <div class="input__form">
-    <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="Search someone..." class='mytext'>
-    <ul class="search-result">
-      <li *ngFor="let contact of contacts$  | async">
-        <a routerLink="/room/{{contact.id}}">
-          {{contact.full_name}}
-        </a>
-      </li>
-    </ul>
-
-
-
-    <div class="person__add">
-      <mat-icon matSuffix>person_add</mat-icon>
+  <div class="menu">
+      <button mat-icon-button matTooltip="Chat menu">
+      <mat-icon >menu</mat-icon>
+      </button>
     </div>
+<div class="input__form">
+    
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="Search " class='mytext'>
+  <ul class="search-result">
+    <li *ngFor="let contact of contacts$  | async">
+      <a routerLink="/room/{{contact.id}}">
+        {{contact.full_name}}
+      </a>
+    </li>
+  </ul>
+
+
+<!--
+  <div class="person__add">
+    <mat-icon >person_add</mat-icon>
   </div>
+  -->
 </div>
+</div>
+
+
+<mat-sidenav-container
+  class="example-container" (backdropClick)="close('backdrop')">
+<mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
+  <p><button mat-button (click)="close('toggle button')">Toggle</button></p>
+</mat-sidenav>
+
+<mat-sidenav-content>
+  <p><button mat-button (click)="sidenav.open()">Open</button></p>
+</mat-sidenav-content>
+</mat-sidenav-container>

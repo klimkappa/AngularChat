@@ -1,7 +1,10 @@
-<div class="input__form" >
+<div class="input__form"  id="form">
   <input ngModel #input="ngModel" placeholder="Start chatting..." name="text" class="mytext" id='input' maxlength="400">
   <div class="send__message">
-    <mat-icon (click)="sendMessage('sdfds'); input.value = ''">send</mat-icon>
+      <button mat-icon-button matTooltip="Press to send message">
+          <mat-icon (click)="sendMessage(input.value);"(click)="input.reset();">send</mat-icon>
+        </button>
+    
   </div>
 </div>
 
@@ -16,4 +19,4 @@
   </div> -->
 
 
-  = = =
+  

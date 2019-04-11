@@ -1,11 +1,25 @@
 <div class="chat__info">
   <div>
-    <div mat-card-avatar class="example-header-image" [ngStyle]="{ 'background-image': 'url(' + room.icon + ')'}">
-    </div>
+    <!--<a href='{{room.icon}}'>-->
+      <div mat-card-avatar tabindex="0" class="example-header-image" [ngStyle]="{ 'background-image': 'url(' + room.icon + ')'}">
+      </div>
+    <!--</a>-->
   </div>
   <p> {{room.name}} </p>
   <div class="more">
-    <mat-icon>more_vert</mat-icon>
+    <button mat-icon-button [matMenuTriggerFor]="menu"  matTooltip="Chat info menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item >
+        <mat-icon>dialpad</mat-icon>
+        <span>Open chat info</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable notifications</span>
+      </button>
+    </mat-menu>
   </div>
 </div>
 

@@ -3,7 +3,7 @@
 }
 
 .chats {
-    height: 270px;
+    height: 539px;
     background-color: rgb(255, 255, 255);
     max-width: 100%;
     overflow: scroll;
@@ -50,4 +50,69 @@ h4 {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+
+
+
+
+
+
+.search__label {
+    background-color: rgb(150, 150, 150);
+    border: 1px solid rgb(85, 85, 85);
+    display: inline-flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.input__form {
+    margin-top: 7px;
+    display: inline-flex;
+    padding-right: 0px;
+    background-color: rgb(204, 201, 201);
+    height: 30px;
+    width: 79%;
+    margin-left: 12px;
+    border-radius: 5px 5px 5px 5px;
+
+}
+
+.person__add {
+    cursor: pointer;
+    padding: 7px 10px 10px 10px;
+    width: 30px;
+    height: 20px;
+}
+
+.menu {
+    cursor: pointer;
+    width: 30px;
+
+}
+
+input {
+    font-size: 1.0em;
+    outline: none;
+    border: 0;
+    background-color: rgb(204, 201, 201);
+    border-radius: 10px 10px 10px;
+    cursor: text;
+    margin-left: 6px;
+}
+
+.mytext {
+    width: 90%;
+    padding-right: 10px;
+}
+
+mat-sidenav{
+
+    display: inline-flex;
+    width: 300px;
+    padding: 10px 10px 10px 10px;
+    
+    border: 1px solid rgb(85, 85, 85);
+    background-color: rgb(204, 201, 201);
 }

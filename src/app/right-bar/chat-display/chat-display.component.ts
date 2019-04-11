@@ -29,8 +29,5 @@ export class ChatDisplayComponent implements OnInit {
  
   @Input() roomId : number;  
   public pessages: Message[] = MESSAGES;
-  
-  RoomDetector(){
-    alert(this.roomId);
-  }
+ 
 }

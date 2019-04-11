@@ -7,7 +7,7 @@ import { LeftBarSearchComponent } from './left-bar/left-bar-search/left-bar-sear
 import { RightMainComponent } from './right-bar/right-main/right-main.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'room/1', pathMatch: 'full' },
+  { path: '', redirectTo: 'room/0', pathMatch: 'full' },
   { path: 'Contacts', component: LeftBarContactsComponent },
   { path: 'Chats', component: LeftBarChatsComponent },
   { path: 'room/:roomId', component: RightMainComponent },];

@@ -12,14 +12,14 @@
 }
 .left__bar{      
     min-width: 25%;   
-    width: 35%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;    
 }
 .right__bar{
     min-width: 30%;
-    width: 65%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;

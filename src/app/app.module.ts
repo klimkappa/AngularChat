@@ -53,6 +53,7 @@ import { SendMessageComponent } from './right-bar/send-message/send-message.comp
 import { RightMainComponent } from './right-bar/right-main/right-main.component';
 import { InMemoryDataService } from './service/InMemoryData/in-memory-data.service';
 import { CommonModule } from '@angular/common';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
     InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

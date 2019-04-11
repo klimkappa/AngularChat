@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Contact } from 'src/app/models/chat/entity/contact';
 import { CONTACTS } from 'src/app/models/chat/entity/mock-contacts';
 import { RoomService } from 'src/app/service/room/room.service';
 import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
+import { MatSidenav } from '@angular/material/sidenav';
+import { ContactService } from 'src/app/service/contact/contact.service';
 
 @Component({
   selector: 'app-left-bar-chats',
@@ -21,16 +24,44 @@ export class LeftBarChatsComponent implements OnInit {
   roomService: RoomService;
 
 
+  
+
+
+  @ViewChild('sidenav') sidenav: MatSidenav;
+
+
+  close(reason: string) {
+    this.sidenav.close();
+  }
+  
+  contacts$: Observable<Contact[]>;
+  private searchTerms = new Subject<string>();
+
+  search(term: string): void {
+    this.searchTerms.next(term);
+  }
+
+
   public onSelect(contact: Contact): void {
     this.selectedContact = contact;
   }
-  constructor(private router: Router) {
+  constructor(private router: Router, private contactService: ContactService) {
     this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe((r: NavigationEnd) => {
       console.log(router.routerState.root.firstChild.paramMap['roomId']);
     });
   }
 
   ngOnInit() {
+    
+
+    this.contacts$ = this.searchTerms.pipe(
+
+      debounceTime(150),
+
+      distinctUntilChanged(),
+
+      switchMap((term: string) => this.contactService.searchContacts(term)),
+    );
   }
   
 

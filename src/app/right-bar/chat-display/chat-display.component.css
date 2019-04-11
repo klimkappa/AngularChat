@@ -1,5 +1,7 @@
 :host {
     display: block;
+    
+    border: 1px solid rgb(85, 85, 85);
 }
 
 .chat__display {
@@ -8,34 +10,33 @@
     justify-content: flex-start;
     align-items: flex-end;
     align-content: center;
-    height: 597px;
+    height: 512px;
     background-color: rgb(194, 194, 194);
     max-width: 100%;
     overflow: scroll;
     overflow-x: hidden;
-    border: 1px solid rgb(85, 85, 85);
 }
 
-.companion_msgs {
+.msgs.left {
     align-self: flex-start;
-    max-width: 65%;
+    max-width: 75%;
     border: 1px inset;
     padding: 3px 3px 3px 3px;
     margin: 5px 12px 0 12px;
     background-color: rgb(228, 226, 225);
     border-radius: 10px 10px 10px 10px;
     max-height: 40%;
-    text-align: center;
+    text-align: left;
 }
-.own_msgs {
-    max-width: 65%;
+.msgs.right {
+    max-width: 75%;
     border: 1px inset;
     padding: 3px 3px 3px 3px;
     margin: 5px 12px 0 12px;
     background-color: rgb(228, 226, 225);
     border-radius: 10px 10px 10px 10px;
     max-height: 40%;
-    text-align: center;
+    text-align: left;
 }
 
 ::-webkit-scrollbar {

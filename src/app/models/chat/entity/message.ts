@@ -3,7 +3,7 @@ import { Contact } from './contact';
 
 export class Message extends BasicEntity {
     body: string;
-    author_id?: number;
+    author_id: number;
     author?: Contact;
 
     attachments?: Object[];

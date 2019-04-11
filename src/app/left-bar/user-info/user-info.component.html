@@ -1,10 +1,27 @@
 <div class="user__info">
   <div class="person">
-    <img src='https://img.pngio.com/person-outline-icon-png-person-outline-icon-png-person-1901-person-png-outline-512_512.png'>
+      <button mat-icon-button>
+          <mat-icon>account_circle  </mat-icon>
+        </button>
      </div>
-     
-    <div class="more">
+
+    <div class="more"><button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="User info menu">
         <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Open user info</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>voicemail</mat-icon>
+          <span>Music</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable/enable notifications</span>
+        </button>
+      </mat-menu>
        
         
     </div>

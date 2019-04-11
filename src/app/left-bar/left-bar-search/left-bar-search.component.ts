@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ContactService } from 'src/app/service/contact/contact.service';
 import { Observable, Subject } from 'rxjs';
 import { Contact } from 'src/app/models/chat/entity/contact';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-left-bar-search',
@@ -11,6 +12,14 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 })
 export class LeftBarSearchComponent implements OnInit {
 
+
+  @ViewChild('sidenav') sidenav: MatSidenav;
+
+
+  close(reason: string) {
+    this.sidenav.close();
+  }
+  
   contacts$: Observable<Contact[]>;
   private searchTerms = new Subject<string>();
 

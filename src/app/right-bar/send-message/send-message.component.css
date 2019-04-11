@@ -20,9 +20,8 @@
 
 .send__message {
     cursor: pointer;
-    background-color: rgb(204, 201, 201);
     border-radius: 50% 50% 50% 50%;
-    padding: 7px 0px 12px 10px;
+    padding-bottom: 22px;
     width: 30px;
     height: 20px;
 }

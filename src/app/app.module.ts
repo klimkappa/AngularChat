@@ -43,7 +43,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LeftBarChatsComponent } from './left-bar/left-bar-chats/left-bar-chats.component';
+import { LeftBarChatsComponent, MenuContactsDialog } from './left-bar/left-bar-chats/left-bar-chats.component';
 import { LeftBarContactsComponent } from './left-bar/left-bar-contacts/left-bar-contacts.component';
 import { LeftBarSearchComponent } from './left-bar/left-bar-search/left-bar-search.component';
 import { UserInfoComponent } from './left-bar/user-info/user-info.component';
@@ -54,14 +54,20 @@ import { RightMainComponent } from './right-bar/right-main/right-main.component'
 import { InMemoryDataService } from './service/InMemoryData/in-memory-data.service';
 import { CommonModule } from '@angular/common';
 import { ModalModule } from 'ngx-bootstrap/modal';
-
+import { UserInfoDialog } from './left-bar/user-info/user-info.component'
 @NgModule({
+  entryComponents: [
+    UserInfoDialog,
+    MenuContactsDialog
+  ],
   declarations: [
     AppComponent,
     LeftBarChatsComponent,
+    MenuContactsDialog,
     LeftBarContactsComponent,
     LeftBarSearchComponent,
     UserInfoComponent,
+    UserInfoDialog,
     ChatDisplayComponent,
     ChatInfoComponent,
     SendMessageComponent,

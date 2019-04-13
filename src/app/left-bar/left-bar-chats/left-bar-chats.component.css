@@ -10,12 +10,34 @@
     overflow-x: hidden;
     border: 1px solid rgb(85, 85, 85);
 }
+.menu-card {
+    margin-top: 20px;
+    display: flex;
+    cursor: pointer;
+    height: 30px;
+    justify-content: center;
+    border-radius: 0px 0px 0px 0px;
+    border: none;
+    background-color: rgb(150, 150, 150);
+    padding: 0 0 0 0;
+}
+.menu-card:hover{
+    
+    background-color: rgb(92, 92, 92);
+}
+ .menu-card mat-card-title{
+    margin-left: 4px;
+}
+
+span{
+    font-size: 20px;
+}
 mat-card {
     cursor: pointer;
     border-radius: 0px 0px 0px 0px;
     padding: 21px 0px 0px 0px;
     padding-left: 10px;
-    border: 4px double rgb(85, 85, 85);
+    border: 1px solid rgb(85, 85, 85);
     background-color: rgb(224, 224, 224);
 }
 mat-card:hover{
@@ -110,9 +132,9 @@ input {
 mat-sidenav{
 
     display: inline-flex;
-    width: 300px;
-    padding: 10px 10px 10px 10px;
+    width: 100%;
+    padding-top: 5px;
     
     border: 1px solid rgb(85, 85, 85);
-    background-color: rgb(204, 201, 201);
+    background-color: rgb(150, 150, 150);
 }

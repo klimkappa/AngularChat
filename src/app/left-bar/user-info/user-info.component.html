@@ -1,18 +1,18 @@
 <div class="user__info">
   <div class="person">
-      <button mat-icon-button>
+      <button mat-icon-button (click)="openDialog()"  >
           <mat-icon>account_circle  </mat-icon>
-        </button>
-     </div>
-
+        </button>        
+     </div><div mat-card-avatar class="example-header-image"
+     [ngStyle]="{ 'background-image': 'url(' + this.status_photo + ')'}"></div>
     <div class="more"><button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="User info menu">
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button  mat-menu-item (click)="openDialog()">
           <mat-icon>dialpad</mat-icon>
-          <span>Open user info</span>
-        </button>
+          <span>Change status</span>
+        </button><!--
         <button mat-menu-item>
           <mat-icon>voicemail</mat-icon>
           <span>Music</span>
@@ -20,12 +20,29 @@
         <button mat-menu-item>
           <mat-icon>notifications_off</mat-icon>
           <span>Disable/enable notifications</span>
-        </button>
+        </button>-->
       </mat-menu>
        
         
     </div>
 </div>
+<!--
+<ol>
+  
+  <li>
+    <button mat-raised-button (click)="openDialog()">Pick one</button>
+  </li>
+  <li *ngIf="status">
+    You chose: <i>{{status}}</i>
+  </li>
+</ol>-->
+
+
+
+
+
+
+
 
 
 <!--

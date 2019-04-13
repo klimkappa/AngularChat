@@ -1,9 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { ContactService } from 'src/app/service/contact/contact.service';
 import { Observable, Subject } from 'rxjs';
 import { Contact } from 'src/app/models/chat/entity/contact';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { MatSidenav } from '@angular/material/sidenav';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { DialogData } from '../user-info/user-info.component';
 
 @Component({
   selector: 'app-left-bar-search',
@@ -42,3 +44,4 @@ export class LeftBarSearchComponent implements OnInit {
   }
 
 }
+

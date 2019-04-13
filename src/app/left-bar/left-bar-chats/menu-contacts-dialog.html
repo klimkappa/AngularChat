@@ -1,0 +1,12 @@
+<h1 mat-dialog-title> Contacts List:</h1>
+<div class="chats">
+<mat-card *ngFor="let contact of contacts" 
+      routerLink="/room/{{contact.id}}" matTooltip="Select to start chat with..">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"
+          [ngStyle]="{ 'background-image': 'url(' + contact.profile_photo + ')'}"></div>
+        <mat-card-title>{{contact.full_name}} </mat-card-title>
+        <mat-card-subtitle>{{contact.last_chat}} </mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+</div>

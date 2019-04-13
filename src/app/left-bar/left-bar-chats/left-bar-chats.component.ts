@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { Contact } from 'src/app/models/chat/entity/contact';
 import { CONTACTS } from 'src/app/models/chat/entity/mock-contacts';
 import { RoomService } from 'src/app/service/room/room.service';
@@ -7,6 +7,8 @@ import { filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/oper
 import { Observable, Subject } from 'rxjs';
 import { MatSidenav } from '@angular/material/sidenav';
 import { ContactService } from 'src/app/service/contact/contact.service';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import { DialogData } from '../user-info/user-info.component';
 
 @Component({
   selector: 'app-left-bar-chats',
@@ -45,7 +47,7 @@ export class LeftBarChatsComponent implements OnInit {
   public onSelect(contact: Contact): void {
     this.selectedContact = contact;
   }
-  constructor(private router: Router, private contactService: ContactService) {
+  constructor(private router: Router,public dialog: MatDialog, private contactService: ContactService) {
     this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe((r: NavigationEnd) => {
       console.log(router.routerState.root.firstChild.paramMap['roomId']);
     });
@@ -64,5 +66,36 @@ export class LeftBarChatsComponent implements OnInit {
     );
   }
   
+  openDialog(): void {
+    const dialogRef = this.dialog.open(MenuContactsDialog, {
+      data: {},
+      width: '350px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+}
+
+
+@Component({
+  selector: 'menu-contacts-dialog',
+  templateUrl: 'menu-contacts-dialog.html',
+  styleUrls: ['./menu-contacts-dialog.css']
+})
+export class MenuContactsDialog {
+
+  
+  public contacts: Contact[] = CONTACTS;
+
+  constructor(
+    public dialogRef: MatDialogRef<MenuContactsDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
 }

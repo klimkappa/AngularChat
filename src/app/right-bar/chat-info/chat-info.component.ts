@@ -39,4 +39,7 @@ export class ChatInfoComponent implements OnInit {
 
   }
 
+  
+  changeNotifications(){}
+
 }

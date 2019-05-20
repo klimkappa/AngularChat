@@ -15,15 +15,9 @@ export interface DialogData {
 })
 export class UserInfoComponent implements OnInit {
 
- /* avaliable: Status[] = [
-    {statusValue: 'online-0', statusViewValue: 'https://static.thenounproject.com/png/1144840-200.png'},
-    {statusValue: 'offline-1', statusViewValue: 'https://static.thenounproject.com/png/1144840-200.png'},
-    {statusValue: 'busy-2', statusViewValue: 'https://static.thenounproject.com/png/1144840-200.png'}
-  ];
- */
 
 status: string;
-status_photo: string = 'http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-user-online-icon.png';
+status_photo: string = 'https://cdn-images-1.medium.com/max/1600/1*vEaQadgbGxhRVfjxz0lBEQ.png';
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {  }
@@ -39,10 +33,10 @@ status_photo: string = 'http://icons.iconarchive.com/icons/oxygen-icons.org/oxyg
       this.status = result;
      
       
-      this.status_photo = (this.status == 'Online') ? 'http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-user-online-icon.png':
-      (this.status == 'Offline') ? 'https://cdn4.iconfinder.com/data/icons/fugue/icon_shadowless/status-offline.png' :
-      (this.status == 'Busy') ? 'https://cdn4.iconfinder.com/data/icons/fugue/icon_shadowless/status-busy.png' :
-      'https://cdn1.iconfinder.com/data/icons/streamline-interface/60/cell-8-0-480.png'
+      this.status_photo = (this.status == 'Online') ? 'https://cdn-images-1.medium.com/max/1600/1*vEaQadgbGxhRVfjxz0lBEQ.png':
+      (this.status == 'Offline') ? 'https://cdn1.iconfinder.com/data/icons/fs-icons-ubuntu-by-franksouza-/512/skype_contact_offline.png' :
+      (this.status == 'Busy') ? 'https://cdn-images-1.medium.com/max/1600/1*09w_ss-CrhueAVz2l_oL9g.png' :
+      'https://cdn-images-1.medium.com/max/1600/1*0MVaTvvY6QogU3a_onFjzA.png'
 
     });
 

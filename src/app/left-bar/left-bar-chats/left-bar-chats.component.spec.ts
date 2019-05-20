@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LeftBarChatsComponent } from './left-bar-chats.component';
 
 describe('LeftBarChatsComponent', () => {
@@ -8,9 +7,9 @@ describe('LeftBarChatsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LeftBarChatsComponent ]
+      declarations: [LeftBarChatsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
